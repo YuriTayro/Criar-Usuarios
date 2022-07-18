@@ -38,6 +38,7 @@
     "@types/mustache-express": "^1.2.2",
     "@types/node": "^18.0.6",
     "@types/sequelize": "^4.28.14",
-    "@types/validator": "^13.7.4"
+    "@types/validator": "^13.7.4",
+    "copyfiles": "^2.4.1"
   }
 }
