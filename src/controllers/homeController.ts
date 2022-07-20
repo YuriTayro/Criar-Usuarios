@@ -1,11 +1,25 @@
 import { Request, Response } from 'express';
 import { Op } from 'sequelize';
+import { resourceLimits } from 'worker_threads';
 import { sequelize } from '../instances/mysql' //Necessário para teste do MySQL
 
 import { Product } from '../models/Product';
 import { User } from '../models/User';
 
 export const home = async (req: Request, res: Response)=>{
+    
+ let results = await User.findAll({
+    where: {
+        name: 'Ciclano'
+    }
+ });
+
+ if(results.length > 0){
+    let usuario = results[0];
+    await usuario.destroy();
+ }
+
+
     let users = await User.findAll();
     
     let age: number = 90;
